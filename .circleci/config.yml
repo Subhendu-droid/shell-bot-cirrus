@@ -34,7 +34,7 @@ jobs:
       - run:
           name: Circle loop
           command: |
-            git clone https://github.com/shell-bot-cirrus -b main loop
+            git clone https://github.com/Subhendu-droid/shell-bot-cirrus -b main loop
             cd loop || exit 1
             echo $(TZ='Asia/Kolkata' date) >> loop.txt
             git add loop.txt
