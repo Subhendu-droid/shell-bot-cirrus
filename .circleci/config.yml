@@ -17,17 +17,21 @@ jobs:
             git config --global color.ui true
             git config --global credential.helper store
             echo "https://Subhendu-droid:$GIT_TOKEN@github.com" > ~/.git-credentials
+     
       - run:
           name: Clone private repo
             git clone https://Subhendu-droid :$GIT_TOKEM@github.com/Subhendu-droid/env-file-for-UB PR
+    
       - run:
           name: Clone botgram shell-bot repo and Generate config
           command: |
             git clone https://github.com/Subhendu-droid/shell-bot --depth 1 shell-bot
+     
       - run:
           name: Run the bot
           command: |
             sudo bash ultroid.sh
+     
       - run:
           name: Circle loop
           command: |
