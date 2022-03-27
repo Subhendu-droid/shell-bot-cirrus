@@ -26,7 +26,8 @@ jobs:
       - run:
           name: Run bot
           command: |
-            git clone https://github.com/Subhendu-droid/shell-bot-cirrus -b main
+            git clone https://github.com/Subhendu-droid/shell-bot-cirrus -b main bot
+            cd bot
             sudo bash ultroid.sh
      
       - run:
