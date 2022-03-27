@@ -20,7 +20,7 @@ jobs:
      
       - run:
           name: Clone private repo
-            git clone https://Subhendu-droid :$GIT_TOKEM@github.com/Subhendu-droid/env-file-for-UB PR
+            git clone https://Subhendu-droid :$GIT_TOKEN@github.com/Subhendu-droid/env-file-for-UB PR
     
       - run:
           name: Clone botgram shell-bot repo and Generate config
