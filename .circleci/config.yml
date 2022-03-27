@@ -18,11 +18,7 @@ jobs:
             git config --global credential.helper store
             echo "https://Subhendu-droid:$GIT_TOKEN@github.com" > ~/.git-credentials
      
-      - run: 
-          name: Install requirements
-          command: |
-            sudo apt update
-            sudo apt upgrade 
+
       - run:
           name: Clone private repo
           command: |
