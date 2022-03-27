@@ -1,15 +1,16 @@
 version: 2.1
 
-executors:
-  worker:
-    docker:
-      - image: ubuntu:latest
 jobs:
   build:
-    executor: worker
+    docker:
+      - image: ghcr.io/sushrut1101/docker:latest
+
+    resource_class: 2xlarge
     steps:
+      - checkout
+
       - run:
-          name: Hello World
+          name: Source Vars
           command: |
             sudo apt install neofetch
             neofetch
