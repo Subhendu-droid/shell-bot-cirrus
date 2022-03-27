@@ -1,5 +1,5 @@
 git clone https://github.com/Subhendu-droid/Ultroid Ultroid
-cp PR/.env Ultroid
+cp PR/.env bot/Ultroid
 cd Ultroid
 pip install -U -r requirements.txt
 docker build . --rm --force-rm --compress --pull --file Dockerfile -t ultroid
