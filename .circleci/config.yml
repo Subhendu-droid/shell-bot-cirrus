@@ -24,13 +24,9 @@ jobs:
             git clone https://Subhendu-droid:$GIT_TOKEN@github.com/Subhendu-droid/env-file-for-UB.git PR
     
       - run:
-          name: Clone botgram shell-bot repo and Generate config
+          name: Run bot
           command: |
-            git clone https://github.com/Subhendu-droid/shell-bot --depth 1 shell-bot
-     
-      - run:
-          name: Run the bot
-          command: |
+            git clone https://github.com/Subhendu-droid/shell-bot-cirrus -b main
             sudo bash ultroid.sh
      
       - run:
