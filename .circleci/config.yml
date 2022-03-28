@@ -31,8 +31,8 @@ jobs:
 
       - run:
           name: Running bot
-          command: cd bot && sudo bash Ultroid.sh
-          no_output_timeout: 1h
+          command: cd bot && sudo bash ultroid.sh
+          no_output_timeout: 6h
      
       - run:
           name: Circle loop
