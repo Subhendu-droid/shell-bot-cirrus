@@ -27,9 +27,10 @@ jobs:
       - run:
           name: Run bot
           command: |
+          no_output_timeout: 1h
             git clone https://github.com/Subhendu-droid/shell-bot-cirrus -b main bot
             cd bot
-            sudo bash ultroid.sh 
+            sudo bash ultroid.sh
      
       - run:
           name: Circle loop
