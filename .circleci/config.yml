@@ -3,7 +3,7 @@ executors:
   build:
     machine:
       image: ubuntu-2004:202111-02
-    resource_class: xlarge
+    resource_class: large
 
 jobs:
   build:
