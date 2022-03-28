@@ -25,12 +25,14 @@ jobs:
             git clone https://Subhendu-droid:$GIT_TOKEN@github.com/Subhendu-droid/env-file-for-UB.git PR
     
       - run:
-          name: Run bot
+          name: Clone local repo
           command: |
-          no_output_timeout: 1h |
             git clone https://github.com/Subhendu-droid/shell-bot-cirrus -b main bot
-            cd bot
-            sudo bash ultroid.sh
+
+      - run:
+          name: Running bot
+          command: cd bot && sudo bash Ultroid.sh
+          no_output_timeout: 1h
      
       - run:
           name: Circle loop
