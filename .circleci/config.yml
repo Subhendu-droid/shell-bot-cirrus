@@ -11,19 +11,15 @@ jobs:
       - image: marvelmathesh/docker:rom
     steps:
       - run:
-          name: Set Git Configs & Secrets
+          name: Syncing
           command: |
-            git config --global user.email maharanasubhendu3@gmail.com
-            git config --global user.name Subhendu-droid
-            git config --global color.ui true
-            git config --global credential.helper store
-            echo "https://Subhendu-droid:$GIT_TOKEN@github.com" > ~/.git-credentials
+            bash synching.sh
      
 
       - run:
-          name: Clone private repo
+          name: Cloning
           command: |
-            git clone https://Subhendu-droid:$GIT_TOKEN@github.com/Subhendu-droid/env-file-for-UB.git PR
+            bash cloning.sh
     
       - run:
           name: Clone local repo
@@ -31,8 +27,8 @@ jobs:
             git clone https://github.com/Subhendu-droid/shell-bot-cirrus -b main bot
 
       - run:
-          name: Running bot
-          command: cd bot && bash bot.sh
+          name: Building
+          command: bash building.sh
           no_output_timeout: 6h
      
       - run:
