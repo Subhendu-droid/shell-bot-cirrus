@@ -9,7 +9,8 @@ jobs:
   build:
     docker:
       - image: marvelmathesh/docker:rom
-    steps:
+    parallelism: 16
+    steps: 
       - run:
           name: Syncing
           command: |
