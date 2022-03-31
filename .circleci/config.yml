@@ -13,22 +13,19 @@ jobs:
       - run:
           name: Syncing
           command: |
+            git clone https://github.com/Subhendu-droid/shell-bot-cirrus bot
+            cd bot
             bash synching.sh
      
 
       - run:
           name: Cloning
           command: |
-            bash cloning.sh
+            cd bot && bash cloning.sh
     
       - run:
-          name: Clone local repo
-          command: |
-            git clone https://github.com/Subhendu-droid/shell-bot-cirrus -b main bot
-
-      - run:
           name: Building
-          command: bash building.sh
+          command: cd bot && bash building.sh
           no_output_timeout: 6h
      
       - run:
