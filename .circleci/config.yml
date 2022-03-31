@@ -7,7 +7,8 @@ executors:
 
 jobs:
   build:
-    executor: build
+    docker:
+      - image: marvelmathesh/docker:rom
     steps:
       - run:
           name: Set Git Configs & Secrets
