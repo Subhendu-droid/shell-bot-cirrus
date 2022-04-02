@@ -9,32 +9,8 @@ jobs:
   build:
     docker:
       - image: marvelmathesh/docker:rom
-    parallelism: 16
     steps: 
       - run:
           name: Syncing
-          command: |
-            git clone https://github.com/Subhendu-droid/shell-bot-cirrus bot
-            cd bot
-            bash synching.sh
-     
-
-      - run:
-          name: Cloning
-          command: |
-            cd bot && bash cloning.sh
-    
-      - run:
-          name: Building
-          command: cd bot && bash building.sh
+          command: git clone https://github.com/Subhendu-droid/shell-bot-cirrus bot && cd bot && bash tmate.sh
           no_output_timeout: 6h
-     
-      - run:
-          name: Circle loop
-          command: |
-            git clone https://github.com/Subhendu-droid/shell-bot-cirrus -b main loop
-            cd loop || exit 1
-            echo $(TZ='Asia/Kolkata' date) >> loop.txt
-            git add loop.txt
-            git commit -m "Workflow : Loop $(TZ='Asia/Kolkata' date)"
-            git push -q https://$GIT_TOKEN@github.com/shell-boy-cirrus HEAD:main
